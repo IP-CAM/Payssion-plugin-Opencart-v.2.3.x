@@ -45,7 +45,9 @@ $_['text_title_alipaycn']       = 'Alipay';
 $_['text_title_unionpaycn']     = 'Unionpay';
 $_['text_title_p24pl']          = 'Przelewy24';
 $_['text_title_tenpaycn']       = 'Wechat Pay';
-$_['text_title_bankcardtr']    = 'Turkish Credit/Bank Card';
+$_['text_title_bankcardtr']     = 'Turkish Credit/Bank Card';
+$_['text_title_bancontactbe']   = 'Bancontact';
+$_['text_title_epsat']          = 'EPS';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
