@@ -48,6 +48,7 @@ $_['text_title_tenpaycn']       = 'Wechat Pay';
 $_['text_title_bankcardtr']     = 'Turkish Credit/Bank Card';
 $_['text_title_bancontactbe']   = 'Bancontact';
 $_['text_title_epsat']    = 'EPS';
+$_['text_title_creditcardbr']    = 'Cartão de Crédito';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
