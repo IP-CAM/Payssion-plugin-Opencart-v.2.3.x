@@ -50,6 +50,10 @@ $_['text_title_bancontactbe']   = 'Bancontact';
 $_['text_title_epsat']          = 'EPS';
 $_['text_title_creditcardbr']    = 'Cartão de Crédito';
 $_['text_title_multibancopt']    = 'Multibanco';
+$_['text_title_ktbth']    = 'Krung Thai Bank';
+$_['text_title_krungsrith']    = 'Krungsri Thailand';
+$_['text_title_scbth']    = 'SCB Thailand';
+$_['text_title_uobth']    = 'UOB Thailand';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
