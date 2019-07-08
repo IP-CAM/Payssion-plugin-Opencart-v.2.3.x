@@ -6,7 +6,7 @@ This extension is for opencart 2.3
 
 <h4>Installation</h4>
 
-Copy over _<b>admin</b>_, _<b>catalog</b>_ folders to your Opencart root.
+Go to Extentions > Installer and upload payssion2.3.ocmod.zip.
 
 <h4>Setup</h4>
 
