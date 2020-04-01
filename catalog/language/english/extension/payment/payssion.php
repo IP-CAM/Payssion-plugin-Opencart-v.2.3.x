@@ -54,6 +54,8 @@ $_['text_title_ktbth']    = 'Krung Thai Bank';
 $_['text_title_krungsrith']    = 'Krungsri Thailand';
 $_['text_title_scbth']    = 'SCB Thailand';
 $_['text_title_uobth']    = 'UOB Thailand';
+$_['text_title_creditcardkr']    = 'South Korea Credit Card';
+$_['text_title_tosskr']    = 'Toss';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
