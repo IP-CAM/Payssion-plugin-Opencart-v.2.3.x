@@ -56,6 +56,10 @@ $_['text_title_scbth']    = 'SCB Thailand';
 $_['text_title_uobth']    = 'UOB Thailand';
 $_['text_title_creditcardkr']    = 'South Korea Credit Card';
 $_['text_title_tosskr']    = 'Toss';
+$_['text_title_bcppe']    = 'BCP Peru';
+$_['text_title_interbankpe']    = 'InterBank Peru';
+$_['text_title_pagoefectivope']    = 'Pagoefectivo Peru';
+$_['text_title_speimx']    = 'SPEI Mexico';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
