@@ -60,6 +60,12 @@ $_['text_title_bcppe']    = 'BCP Peru';
 $_['text_title_interbankpe']    = 'InterBank Peru';
 $_['text_title_pagoefectivope']    = 'Pagoefectivo Peru';
 $_['text_title_speimx']    = 'SPEI Mexico';
+$_['text_title_payeasyjp']    = 'Pay-easy';
+$_['text_title_mybank']    = 'MyBank';
+$_['text_title_paybybankappgb']    = 'PayByBank UK';
+$_['text_title_payconiq']    = 'Payconiq';
+$_['text_title_pixbr']    = 'PIX';
+$_['text_title_klarna']    = 'Klarna';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
@@ -67,3 +73,6 @@ $_['text_success_wait']			= '<b><span style="color: #FF0000">Please wait...</spa
 $_['text_failure']				= '... Your payment has not been received yet, please wait up to 10 minutes for us to process the payment if you have paid.';
 $_['text_failure_wait']			= '<b><span style="color: #FF0000">Please wait...</span></b><br>If you are not automatically re-directed in 10 seconds, please click <a href="%s">here</a>.';
 $_['text_pw_mismatch']			= 'CallbackPW does not match. Order requires investigation.';
+
+//Round Off Description
+$_['roundoff_description']  = 'Rounding difference due to currency conversion';

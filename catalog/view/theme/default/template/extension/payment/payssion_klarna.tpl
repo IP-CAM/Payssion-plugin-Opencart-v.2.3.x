@@ -12,9 +12,11 @@
   <input type="hidden" name="amount" value="<?php echo $amount; ?>" />
   <input type="hidden" name="currency" value="<?php echo $currency; ?>" />
   <input type="hidden" name="language" value="en">
-  <input type="hidden" name="notify_url"  value="<?php echo $notify_url; ?>" >
+  <input type="hidden" name="notify_url" value="<?php echo $notify_url; ?>" >
   <input type="hidden" name="success_url" value="<?php echo $success_url; ?>" />
-  <input type="hidden" name="return_url"  value="<?php echo $return_url; ?>" />
+  <input type="hidden" name="return_url" value="<?php echo $return_url; ?>" />
+  <input type="hidden" name="billing_address" value="<?php echo $billing_address; ?>" />
+  <input type="hidden" name="order_items" value="<?php echo $order_items; ?>" />
 
   <div class="buttons">
     <div class="pull-right">

@@ -42,5 +42,32 @@ class ModelExtensionPaymentPayssion extends Model {
 		}
 		return $method_data;
 	}
+	
+	public function getOrderProducts($order_id) {
+	    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+	    
+	    return $query->rows;
+	}
+	
+	public function getCouponDetails($orderID) {
+	    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_total WHERE order_id = '" . (int)$orderID . "' AND code = 'coupon'");
+	    return $query->row;
+	}
+	
+	public function getVoucherDetails($orderID) {
+	    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_total WHERE order_id = '" . (int)$orderID . "' AND code = 'voucher'");
+	    return $query->row;
+	}
+	
+	public function getRewardPointDetails($orderID) {
+	    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_total WHERE order_id = '" . (int)$orderID . "' AND code = 'reward'");
+	    return $query->row;
+	}
+	
+	public function getOtherOrderTotals($orderID) {
+	    $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_total WHERE order_id = '" . (int)$orderID . "' AND code != 'shipping' AND code != 'tax' AND code != 'voucher' AND code != 'sub_total' AND code != 'coupon' AND code != 'reward' AND code != 'total'");
+	    
+	    return $query->rows;
+	}
 }
 

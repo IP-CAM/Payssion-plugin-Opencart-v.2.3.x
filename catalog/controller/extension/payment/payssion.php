@@ -1,12 +1,10 @@
 <?php
 class ControllerExtensionPaymentPayssion extends Controller {
 	protected $pm_id = '';
+	protected $template = 'payssion';
+	
 	public function index() {
 		$data['button_confirm'] = $this->language->get('button_confirm');
-
-		$this->load->model('checkout/order');
-
-		$order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
 
 		if (!$this->config->get('payssion_test')) {
 			$data['action'] = 'https://www.payssion.com/payment/create.html';
@@ -14,33 +12,41 @@ class ControllerExtensionPaymentPayssion extends Controller {
 			$data['action'] = 'http://sandbox.payssion.com/payment/create.html';
 		}
 
-		$data['source'] = 'opencart';
-		$data['pm_id'] = $this->pm_id;
-		$data['api_key'] = $this->config->get('payssion_apikey');
-		$data['track_id'] = $order_info['order_id'];
-		$data['amount'] = $this->currency->format($order_info['total'], $order_info['currency_code'], $order_info['currency_value'], false);
-		$data['currency'] = $order_info['currency_code'];
-		$data['description'] = $this->config->get('config_name') . ' - #' . $order_info['order_id'];
-		$data['payer_name'] = $order_info['payment_firstname'] . ' ' . $order_info['payment_lastname'];
-
-// 		if (!$order_info['payment_address_2']) {
-// 			$data['address'] = $order_info['payment_address_1'] . ', ' . $order_info['payment_city'] . ', ' . $order_info['payment_zone'];
-// 		} else {
-// 			$data['address'] = $order_info['payment_address_1'] . ', ' . $order_info['payment_address_2'] . ', ' . $order_info['payment_city'] . ', ' . $order_info['payment_zone'];
-// 		}
-
-		//$data['postcode'] = $order_info['payment_postcode'];
-		$data['country'] = $order_info['payment_iso_code_2'];
-		//$data['telephone'] = $order_info['telephone'];
-		$data['payer_email'] = $order_info['email'];
+		$this->load->model('checkout/order');
+		$order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
+		$data = array_merge($data, $this->fillFormData($order_info));
 		
-		$data['notify_url'] = $this->url->link('extension/payment/payssion/notify', '', true);
-		$data['success_url'] = $this->url->link('checkout/success', '', true);
-		$data['return_url'] = $this->url->link('checkout/checkout', '', true);
-
-		$data['api_sig'] = $this->generateSignature($data, $this->config->get('payssion_secretkey'));
-		
-		return $this->load->view('extension/payment/payssion.tpl', $data);
+		return $this->load->view('extension/payment/' . $this->template . '.tpl', $data);
+	}
+	
+	protected function fillFormData($order_info) {
+	    $data['source'] = 'opencart';
+	    $data['pm_id'] = $this->pm_id;
+	    $data['api_key'] = $this->config->get('payssion_apikey');
+	    $data['track_id'] = $order_info['order_id'];
+	    $data['amount'] = $this->currency->format($order_info['total'], $order_info['currency_code'], $order_info['currency_value'], false);
+	    $data['currency'] = $order_info['currency_code'];
+	    $data['description'] = $this->config->get('config_name') . ' - #' . $order_info['order_id'];
+	    $data['payer_name'] = $order_info['payment_firstname'] . ' ' . $order_info['payment_lastname'];
+	    
+	    // 		if (!$order_info['payment_address_2']) {
+	    // 			$data['address'] = $order_info['payment_address_1'] . ', ' . $order_info['payment_city'] . ', ' . $order_info['payment_zone'];
+	    // 		} else {
+	    // 			$data['address'] = $order_info['payment_address_1'] . ', ' . $order_info['payment_address_2'] . ', ' . $order_info['payment_city'] . ', ' . $order_info['payment_zone'];
+	    // 		}
+	    
+	    //$data['postcode'] = $order_info['payment_postcode'];
+	    $data['country'] = $order_info['payment_iso_code_2'];
+	    $data['payer_phone'] = $order_info['telephone'];
+	    $data['payer_email'] = $order_info['email'];
+	    
+	    $data['notify_url'] = $this->url->link('extension/payment/payssion/notify', '', true);
+	    $data['success_url'] = $this->url->link('checkout/success', '', true);
+	    $data['return_url'] = $this->url->link('checkout/checkout', '', true);
+	    
+	    $data['api_sig'] = $this->generateSignature($data, $this->config->get('payssion_secretkey'));
+	    
+	    return $data;
 	}
 	
 	private function generateSignature(&$req, $secretKey) {
