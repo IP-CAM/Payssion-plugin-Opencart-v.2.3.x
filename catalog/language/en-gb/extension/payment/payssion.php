@@ -66,6 +66,24 @@ $_['text_title_paybybankappgb']    = 'PayByBank UK';
 $_['text_title_payconiq']    = 'Payconiq';
 $_['text_title_pixbr']    = 'PIX';
 $_['text_title_klarna']    = 'Klarna';
+$_['text_title_boostmy']    = 'Boost';
+$_['text_title_grabpaymy']    = 'Grabpay Malaysia';
+$_['text_title_touchngomy']    = "Touch 'N Go";
+$_['text_title_paynowsg']    = 'PayNow';
+
+$_['text_title_atmid']    = 'ATM transfer';
+$_['text_title_alfamartid']    = 'Alfamart';
+$_['text_title_danaid']    = 'DANA';
+$_['text_title_dokuid']    = 'DOKU';
+$_['text_title_linkajaid']    = 'LinkAja';
+$_['text_title_ovoid']    = 'OVO';
+$_['text_title_qrisid']    = 'QRIS';
+$_['text_title_shopeepayid']    = 'ShopeePay Indonesia';
+$_['text_title_gcashph']    = 'Gcash';
+$_['text_title_grabpayph']    = 'Grabpay philippines';
+$_['text_title_promptpayth']    = 'PromptPay';
+$_['text_title_truemoneyth']    = 'TrueMoney';
+$_['text_title_shopeepayth']    = 'Shopeepay Thailand';
 
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
