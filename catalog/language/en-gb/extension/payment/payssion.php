@@ -85,6 +85,14 @@ $_['text_title_promptpayth']    = 'PromptPay';
 $_['text_title_truemoneyth']    = 'TrueMoney';
 $_['text_title_shopeepayth']    = 'Shopeepay Thailand';
 
+$_['text_title_blikpl']    = 'BLIK';
+$_['text_title_payupl']    = 'PayU Poland';
+$_['text_title_ebankingkr']    = 'South Korea Internet Banking';
+$_['text_title_ssgpaykr']    = 'SSG Pay';
+$_['text_title_kakaopaykr']    = 'KakaoPay';
+$_['text_title_paycokr']    = 'PAYCO';
+$_['text_title_samsungpaykr']    = 'Samsung Pay';
+
 $_['text_response']				= '';
 $_['text_success']				= '... your payment was successfully received.';
 $_['text_success_wait']			= '<b><span style="color: #FF0000">Please wait...</span></b> while we finish processing your order.<br>If you are not automatically re-directed in 10 seconds, please click <a href="%s">here</a>.';
